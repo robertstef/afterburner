@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  afterburner:
+    tty: true
+    image: afterburner-img
+    container_name: afterburner-dev
+    ports:
+      - 80:80
+    volumes:
+      - .:/usr/src/afterburner
+
