@@ -4,7 +4,7 @@ pub struct Cpu {
   pub r15_program_counter: u32,
   /*  
   Register 13 is sometimes a stack pointer 
-    if the CPU is in THUMB mode, r13 is a stack pointeere
+    if the CPU is in THUMB mode, r13 is a stack pointer
     if the CPU is in ARM mode, the user can use r13 as a stack pointer OR as a GPR 
   */
   pub general_purpose_registers: [u32; 13]
