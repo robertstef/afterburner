@@ -4,7 +4,8 @@ pub struct DecodeOperation {
     pub shift_amt: u32,
 }
 pub fn decode_alu_instruction(instruction: u32, operations: &Vec<DecodeOperation>) -> ALUInstruction {
-    let decoded_fields = decode(instruction, operations); 
+    let decoded_fields = decode(instruction, operations);
+    // TODO robert fix this awful code 
     ALUInstruction { 
         condition: (decoded_fields[0] as u8), 
         is_immediate: (decoded_fields[1] != 0), 
