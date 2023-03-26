@@ -1,12 +1,10 @@
 use instruction::decoder::*;
+
+use crate::instruction::instruction::ALUInstruction;
 pub mod instruction;
 
 fn main() {
     println!("Hello, world!");  
-    let operation: DecodeOperation = DecodeOperation {
-        mask: 123, 
-        shift_amt: 1
-    };
-    let operations = vec![operation];
-    decode(13321321, operations);
+    let instruction = ALUInstruction::new(0b0000_0000_0000_0000_0001_0000_0000_0010);
+    println!("{:?}", instruction);
 }
