@@ -20,7 +20,7 @@ impl Cpu {
     }
   }
 
-  pub fn doDataOp(op: Instruction, op1: u32, op2: u32, ) {
+  pub fn doALUOp(op: Instruction, op1: u32, op2: u32, ) {
     match op {
       AND | TST => {
         op1 & op2
@@ -44,8 +44,21 @@ impl Cpu {
     }
   }
 
-  // Dunno what a good interface to this class would be really 
+  pub fn determineType(instructionLiteral: u32) -> Instruction {
+    // todo
+    AND
+  }
+
+  // todo this type should be u4 but we would need to create it
+  // todo this is a placeholder until we have an instruction type
+  pub fn determineDestinationRegister(instructionLiteral: u32) -> u8 {
+
+  }
+
   pub fn step(&mut self, instuction: u32){
     let instructionType = self.determineType(instruction);
+    let destinationRegister = self.determineDestinationRegister(instruction);
+    // TODO match on different insruction types 
+    general_purpose_registers[destinationRegister] = doALUOp(instruction);
   }
 }
