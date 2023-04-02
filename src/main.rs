@@ -1,6 +1,6 @@
 use instruction::decoder::*;
 
-use crate::instruction::instruction::ALUInstruction;
+use crate::instruction::alu_instruction::ALUInstruction;
 pub mod instruction;
 
 fn main() {
